@@ -4,7 +4,6 @@
 *		play. Uses SFML
 *	Modes : two-player vs, two-player coop, single player 
 *			**coop and single player have leader boards**
-*	4/30/17 - Set up project
 */
 #include <SFML\Graphics.hpp>
 
