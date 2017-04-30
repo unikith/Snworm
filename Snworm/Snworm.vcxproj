@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="changeLog.txt" />
+    <Text Include="DesignNotes.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -23,5 +23,8 @@
     <Text Include="changeLog.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="DesignNotes.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

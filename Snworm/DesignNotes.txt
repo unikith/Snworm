@@ -1,0 +1,52 @@
+
+********************************* Design Notes ******************************************
+*****************************************************************************************
+* Snake Class
+*****************************************************************************************
+*** contains a vector of snake nodes
+*** contains the key bindings for movement
+*****************************************************************************************
+* Controller Class
+*****************************************************************************************
+*** customizable controls
+*** takes a keyboard event and decides what to do with it
+*** contains an array of Snakes that can have various events
+*****************************************************************************************
+* Game Loop Class
+*****************************************************************************************
+*** runs the game loop for each mode
+*** encapsulated the game loops
+*** holds the score if applicable and passes it to what needs it
+*****************************************************************************************
+* Snake Node Class
+*****************************************************************************************
+*** For any particular point in the snake
+*** base class for tail but not abstract
+*** Derives from sf::Circle, color is taken from the snake class
+*****************************************************************************************
+* Tail Class
+*****************************************************************************************
+*** derives from snake node class
+*** is has different movement behavior when spawning a new node
+*****************************************************************************************
+* Consumable Class
+*****************************************************************************************
+*** when it collides with the snake is moved and snake gets a new node
+*** only ever needs to be one consumable
+*** must have a weighted respawn algorithm for when 'eaten' so that no onw snake is 
+***		heavily favored
+*****************************************************************************************
+* Collider Class
+*****************************************************************************************
+*** runs collision detection on the snake's first node and consumables
+*****************************************************************************************
+* Options Loader Class
+*****************************************************************************************
+*** loads player input option and hands them off to proper classes or prints them to the
+***		screen so that they may be changed by player
+*****************************************************************************************
+* Scoreboard Class
+*****************************************************************************************
+*** handles the highscores top 10 
+*** two instances needed as well as two files
+*****************************************************************************************

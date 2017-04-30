@@ -1,7 +1,7 @@
 /*
 *	Programmer : James Nelson
-*	Description : a two-player snake game with tank controls and serverl different modes of
-*		play. Uses SFML
+*	Description : a two-player snake game with tank controls and serveral different modes
+*				of play. Uses SFML
 *	Modes : two-player vs, two-player coop, single player 
 *			**coop and single player have leader boards**
 */
