@@ -149,10 +149,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SnakeHead.cpp" />
+    <ClCompile Include="SnakeNode.cpp" />
+    <ClCompile Include="SnakeTail.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="changeLog.txt" />
     <Text Include="DesignNotes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Snake.h" />
+    <ClInclude Include="SnakeHead.h" />
+    <ClInclude Include="SnakeNode.h" />
+    <ClInclude Include="SnakeTail.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

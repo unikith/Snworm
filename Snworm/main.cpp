@@ -10,7 +10,7 @@
 int main(void)
 {
 	sf::RenderWindow window(sf::VideoMode(600, 600), "Snworm");
-
+	
 	while (window.isOpen())
 	{
 		sf::Event event;
