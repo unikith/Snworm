@@ -155,7 +155,7 @@
     <ClCompile Include="SnakeTail.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="changeLog.txt" />
+    <Text Include="DevLog.txt" />
     <Text Include="DesignNotes.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +163,9 @@
     <ClInclude Include="SnakeHead.h" />
     <ClInclude Include="SnakeNode.h" />
     <ClInclude Include="SnakeTail.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

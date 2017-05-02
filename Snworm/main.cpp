@@ -7,10 +7,13 @@
 */
 #include <SFML\Graphics.hpp>
 
+#include "Snake.h"
+
 int main(void)
 {
 	sf::RenderWindow window(sf::VideoMode(600, 600), "Snworm");
-	
+	Snake p1(sf::Color::Red, 5, sf::Vector2f(100, 100), .1);
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -21,7 +24,10 @@ int main(void)
 				window.close();
 			}
 		}
+		p1.move();
+
 		window.clear();
+		p1.drawInWindow(window);
 		window.display();
 	}
 

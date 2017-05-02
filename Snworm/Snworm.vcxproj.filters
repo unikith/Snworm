@@ -32,11 +32,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="changeLog.txt">
+    <Text Include="DesignNotes.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="DesignNotes.txt">
-      <Filter>Header Files</Filter>
+    <Text Include="DevLog.txt">
+      <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
@@ -52,5 +52,10 @@
     <ClInclude Include="Snake.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
