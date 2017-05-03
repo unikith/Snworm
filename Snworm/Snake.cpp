@@ -2,14 +2,58 @@
 
 
 
-Snake::Snake(sf::Color snakeColor, float nodeRadius, sf::Vector2f spawnPosition, float speed)
+Snake::Snake(sf::Vector2f spawnPosition, sf::Color snakeColor, float nodeRadius,
+	float speed, float turnSpeed, sf::Keyboard::Key left, sf::Keyboard::Key right)
 {
 	mColor = snakeColor;
 	mNodeRadiuses = nodeRadius;
 	mSnakeBody.push_back(new SnakeHead(mColor, mNodeRadiuses, spawnPosition, speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+						sf::Vector2f(spawnPosition.x - 2 * nodeRadius, spawnPosition.y), 
+						speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 4 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 6 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 8 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 10 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 12* nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 14 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 16 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 18 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 19 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 20 * nodeRadius, spawnPosition.y),
+		speed));
+	mSnakeBody.push_back(new SnakeNode(mColor, nodeRadius,
+		sf::Vector2f(spawnPosition.x - 22 * nodeRadius, spawnPosition.y),
+		speed));
 	mSnakeBody.push_back(new SnakeTail(mColor, mNodeRadiuses, 
-						sf::Vector2f(spawnPosition.x - 4 * nodeRadius, spawnPosition.y), speed));
+						sf::Vector2f(spawnPosition.x - 24 * nodeRadius, spawnPosition.y),
+						speed));
 	mSpeed = speed;
+	mTurnSpeed = turnSpeed;
+	this->mLeftKey = left;
+	this->mRightKey = right;
+	mHoldLeft = false;
+	mHoldRight = false;
+	mRotaionDirection = 0;
 }
 
 
@@ -32,7 +76,7 @@ void Snake::drawInWindow(sf::RenderWindow& window)
 
 void Snake::move()
 {
-	for (int i = 0; i < mSnakeBody.size(); i++)
+	for (int i =  mSnakeBody.size() - 1; i >= 0; i--)
 	{
 		if (i > 0)
 		{
@@ -40,7 +84,102 @@ void Snake::move()
 		}
 		else
 		{
-			dynamic_cast<SnakeHead *>(mSnakeBody[i])->move();
+			SnakeHead * temp = dynamic_cast<SnakeHead *>(mSnakeBody[i]);
+			if (temp != nullptr)
+			{
+				temp->modAngle(mTurnSpeed * mRotaionDirection);
+				temp->move();
+			}
 		}
 	}
+}
+
+bool Snake::runEvent(const sf::Event & event)
+{
+	bool success = false;
+	if (event.type == sf::Event::KeyPressed)
+	{
+		success = keyPress(event);
+	}
+	else if (event.type == sf::Event::KeyReleased)
+	{
+		success = keyRelease(event);
+	}
+	return success;
+}
+
+bool Snake::keyPress(const sf::Event event)
+{
+	bool success = false;
+	if (event.key.code == mLeftKey)
+	{
+		success = true;
+		startLeft();
+	}
+	else if (event.key.code == mRightKey)
+	{
+		success = true;
+		startRight();
+	}
+	return success;
+}
+
+bool Snake::keyRelease(const sf::Event event)
+{
+	bool success = false;
+	if (event.key.code == mLeftKey)
+	{
+		success = true;
+		stopLeft();
+	}
+	else if (event.key.code == mRightKey)
+	{
+		success = true;
+		stopRight();
+	}
+	return success;
+}
+
+void Snake::startLeft()
+{
+	if (!mHoldLeft)
+	{
+		mRotaionDirection = 1;
+	}
+	mHoldLeft = true;
+}
+
+void Snake::startRight()
+{
+	if (!mHoldRight)
+	{
+		mRotaionDirection = -1;
+	}
+	mHoldRight = true;
+}
+
+void Snake::stopLeft()
+{
+	if (mHoldRight && mRotaionDirection < 0)
+	{
+		mRotaionDirection = 1;
+	}
+	else if (!mHoldRight)
+	{
+		mRotaionDirection = 0;
+	}
+	mHoldLeft = false;
+}
+
+void Snake::stopRight()
+{
+	if (mHoldLeft && mRotaionDirection > 0)
+	{
+		mRotaionDirection = -1;
+	}
+	else if (!mHoldLeft)
+	{
+		mRotaionDirection = 0;
+	}
+	mHoldRight = 0;
 }

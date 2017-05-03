@@ -14,6 +14,5 @@ public:
 	virtual void move(const SnakeNode &inFront);
 protected:
 	float mSpeed;
-	sf::Vector2f mVelocity;
 };
 

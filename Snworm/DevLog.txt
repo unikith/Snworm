@@ -3,14 +3,19 @@
 *****************************************************************************************
 *	4/30/17 - James			- Set up project
 *	''		- ''			- Set up design notes
-*	5/1/17	- James			- Added SnakeHead, SnakeTail, SnakeNode, and Snake Classes
-*	5/1/17	- James			- Added move to Snake and dependancies
+*	5/1/17	- ''			- Added SnakeHead, SnakeTail, SnakeNode, and Snake Classes
+*	5/1/17	- ''			- Added move to Snake and dependancies
+*	5/1/17	- ''			- Fixed SnakeHead Movement
+*	5/2/17	- ''			- Fixed SnakeNode movement and finished SnakeTail move
+*	5/3/17	- ''			- Added controls to the Snake Class
 *****************************************************************************************
 *****************************************************************************************
 *	ToDo
-*	Fix move for Snakehead so it moves with constant speed in any input angle
+*	Fix movement algorithm
+*	Fix controls, hold right, hold left, release Left: should turn right, not continue 
+*		left
 *****************************************************************************************
 *****************************************************************************************
 *	Bug Log
-*
+*	hold right, hold left, release Left: should turns left
 *****************************************************************************************

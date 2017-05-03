@@ -8,8 +8,5 @@ public:
 	~SnakeTail();
 
 	void move(const SnakeNode &inFront);
-private:
-	int mSpawnsInQueue;
-	bool mIsSpawning;
 };
 
