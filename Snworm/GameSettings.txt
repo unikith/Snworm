@@ -1,0 +1,11 @@
+NodeRadius	7.5
+Speed	6.0
+TurnSpeed	.1
+ConsumableRad	12.0
+ConsumableClr	0 255 255
+P1Color	255 0 0
+LeftBindingP1	Left
+RightBindingP1	Right
+P2Color	255 255 0
+LeftBindingP2	0
+RightBindingP2	3

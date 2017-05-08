@@ -4,18 +4,26 @@
 *	4/30/17 - James			- Set up project
 *	''		- ''			- Set up design notes
 *	5/1/17	- ''			- Added SnakeHead, SnakeTail, SnakeNode, and Snake Classes
-*	5/1/17	- ''			- Added move to Snake and dependancies
-*	5/1/17	- ''			- Fixed SnakeHead Movement
+*	''		- ''			- Added move to Snake and dependancies
+*	''		- ''			- Fixed SnakeHead Movement
 *	5/2/17	- ''			- Fixed SnakeNode movement and finished SnakeTail move
-*	5/3/17	- ''			- Added controls to the Snake Class
+*	5/3/17	- ''			- Added controls to the Snake Class, fixed controls bugs
+*	''		- ''			- Added Spawning for new central nodes
+*	5/6/17	- ''			- Added Collider and Consumable Class
+*	''		- ''			- Added Settings Classes
+*	5/7/17	- ''			- Added Settings Classes and loading and saving to files
+*	''		- ''			- Moved main game loop into GameLoop Class
+*	''		- ''			- Added Score and GameLoop for Co-op
+*	''		- ''			- Added Score Text
 *****************************************************************************************
 *****************************************************************************************
 *	ToDo
 *	Fix movement algorithm
-*	Fix controls, hold right, hold left, release Left: should turn right, not continue 
-*		left
+*	Add Warp or crash walls as options
+*	AutoHide inactive mouse
+*	Pick a style to start documentation
 *****************************************************************************************
 *****************************************************************************************
 *	Bug Log
-*	hold right, hold left, release Left: should turns left
+*	FrameRate Limit causes nodes to seperate slightly
 *****************************************************************************************

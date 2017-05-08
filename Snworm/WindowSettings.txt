@@ -1,0 +1,3 @@
+Width	1800
+Height	700
+FrameRate	60

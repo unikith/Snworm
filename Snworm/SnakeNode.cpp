@@ -6,7 +6,7 @@ SnakeNode::SnakeNode(const sf::Color& snakeColor, float radius, const sf::Vector
 	setOutlineColor(sf::Color::Black);
 	setPosition(position);
 	this->setRadius(radius);
-	setOrigin(this->getGlobalBounds().width, getGlobalBounds().height);
+	setOrigin(this->getGlobalBounds().width / 2, getGlobalBounds().height / 2);
 	mSpeed = speed;
 }
 
@@ -21,7 +21,7 @@ void SnakeNode::move(const SnakeNode &inFront)
 	direction.y = inFront.getPosition().y - this->getPosition().y;
 
 	float magnitude = sqrt(pow(direction.x, 2) + pow(direction.y, 2));
-	if (magnitude >= this->getRadius() * 2 && magnitude != 0)
+	if (magnitude >= getRadius() * 2 && magnitude != 0)
 	{
 		CircleShape::move(direction.x / magnitude * mSpeed, direction.y / magnitude * mSpeed);
 	}

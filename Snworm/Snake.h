@@ -8,6 +8,7 @@ using std::vector;
 
 class Snake
 {
+	friend class SnakeTail;
 public:
 	Snake(sf::Vector2f spawnPosition,sf::Color snakeColor = sf::Color::White,
 		float nodeRadius = 5,  float speed = .1, float turnSpeed =  .05, 
@@ -18,6 +19,8 @@ public:
 	void drawInWindow(sf::RenderWindow& window);
 	void move();
 	bool runEvent(const sf::Event & event);
+	void spawn();
+	SnakeNode &getHead()const;
 private:
 	vector<SnakeNode *> mSnakeBody;
 	sf::Color mColor;

@@ -148,21 +148,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="Consumable.cpp" />
+    <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="GameSettings.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Settings.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeHead.cpp" />
     <ClCompile Include="SnakeNode.cpp" />
     <ClCompile Include="SnakeTail.cpp" />
+    <ClCompile Include="WindowSettings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="DevLog.txt" />
     <Text Include="DesignNotes.txt" />
+    <Text Include="GameSettings.txt" />
+    <Text Include="WindowSettings.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collider.h" />
+    <ClInclude Include="Consumable.h" />
+    <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeHead.h" />
     <ClInclude Include="SnakeNode.h" />
     <ClInclude Include="SnakeTail.h" />
+    <ClInclude Include="WindowSettings.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

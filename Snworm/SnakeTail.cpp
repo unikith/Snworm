@@ -21,3 +21,4 @@ void SnakeTail::move(const SnakeNode &inFront)
 	}
 
 }
+
