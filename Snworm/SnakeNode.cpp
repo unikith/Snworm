@@ -21,7 +21,7 @@ void SnakeNode::move(const SnakeNode &inFront)
 	direction.y = inFront.getPosition().y - this->getPosition().y;
 
 	float magnitude = sqrt(pow(direction.x, 2) + pow(direction.y, 2));
-	if (magnitude >= getRadius() * 2 && magnitude != 0)
+	if (magnitude > (getRadius() * 2.05) && magnitude != 0)
 	{
 		CircleShape::move(direction.x / magnitude * mSpeed, direction.y / magnitude * mSpeed);
 	}

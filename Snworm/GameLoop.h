@@ -8,7 +8,7 @@
 
 typedef enum gameMode
 {
-	SinglePlayer = 0, TwoPlayerCoop, TwoPlayerVS 
+	SinglePlayer = 0, TwoPlayerCoop, TwoPlayerVS, EXIT
 }t_GameMode;
 
 class GameLoop
@@ -25,5 +25,8 @@ private:
 	int twoPlayerCoopLoop(sf::RenderWindow & window);
 
 	void initializeFont(sf::Text & text, sf::Font & font);
+	void collisionSuite(sf::RenderWindow & window, Snake & player, Consumable ** pickup, 
+		int & score, bool & gameOver);
+	bool isOutsideWindow(sf::RenderWindow & window, Snake & player);
 };
 

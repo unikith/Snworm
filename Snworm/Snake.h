@@ -2,7 +2,6 @@
 #include <vector>
 
 #include "SnakeHead.h"
-#include "SnakeTail.h"
 
 using std::vector;
 
@@ -10,7 +9,7 @@ class Snake
 {
 	friend class SnakeTail;
 public:
-	Snake(sf::Vector2f spawnPosition,sf::Color snakeColor = sf::Color::White,
+	Snake(sf::RenderWindow & window, sf::Color snakeColor = sf::Color::White,
 		float nodeRadius = 5,  float speed = .1, float turnSpeed =  .05, 
 		sf::Keyboard::Key right = sf::Keyboard::Right,
 		sf::Keyboard::Key left = sf::Keyboard::Left);
@@ -20,7 +19,10 @@ public:
 	void move();
 	bool runEvent(const sf::Event & event);
 	void spawn();
-	SnakeNode &getHead()const;
+	SnakeNode &getHead()const { return *mSnakeBody[0]; }
+	SnakeNode &getNodeI(int i) { return *mSnakeBody[i]; } 
+	int getSize() { return mSize; }
+
 private:
 	vector<SnakeNode *> mSnakeBody;
 	sf::Color mColor;
@@ -29,16 +31,7 @@ private:
 	float mTurnSpeed;
 	sf::Keyboard::Key mLeftKey;
 	sf::Keyboard::Key mRightKey;
-	bool mHoldLeft;
-	bool mHoldRight;
 	int mRotaionDirection;
-
-	bool keyPress(const sf::Event event);
-	bool keyRelease(const sf::Event event);
-
-	void startLeft();
-	void startRight();
-	void stopLeft();
-	void stopRight();
+	int mSize;
 };
 

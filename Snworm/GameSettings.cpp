@@ -36,9 +36,6 @@ void GameSettings::load()
 	mInputFile >> garbageInt;
 	mP1SnakeColor.b = garbageInt;
 
-	mInputFile >> garbage >> garbage;
-	mInputFile >> garbage >> garbage;
-
 	mInputFile >> garbage >> garbageInt;
 	this->mP2SnakeColor.r = garbageInt;
 	mInputFile >> garbageInt;
@@ -46,8 +43,6 @@ void GameSettings::load()
 	mInputFile >> garbageInt;
 	mP2SnakeColor.b = garbageInt;
 
-	mInputFile >> garbage >> garbage;
-	mInputFile >> garbage >> garbage;
 	mInputFile.close();
 }
 
@@ -62,11 +57,7 @@ void GameSettings::save()
 		<< " " << mConsumableColor.b << "\n";
 	mInputFile << "P1Color\t" << mP1SnakeColor.r << " " << mP1SnakeColor.g << " " 
 		<< mP1SnakeColor.g << "\n";
-	mInputFile << "LeftBindingP1 Left" << "\n";
-	mInputFile << "RightBindingP1 Right" << "\n";
 	mInputFile << "P2Color\t" << mP2SnakeColor.r << " " << mP2SnakeColor.g << " "
 		<< mP2SnakeColor.g << "\n";
-	mInputFile << "LeftBindingP2 A" << "\n";
-	mInputFile << "RightBindingP2 D" << "\n";
 	mInputFile.close();
 }

@@ -1,29 +1,37 @@
 *****************************************************************************************
-*	Date	- Author		- Changes
+*	Date		Author		Changes
 *****************************************************************************************
-*	4/30/17 - James			- Set up project
-*	''		- ''			- Set up design notes
-*	5/1/17	- ''			- Added SnakeHead, SnakeTail, SnakeNode, and Snake Classes
-*	''		- ''			- Added move to Snake and dependancies
-*	''		- ''			- Fixed SnakeHead Movement
-*	5/2/17	- ''			- Fixed SnakeNode movement and finished SnakeTail move
-*	5/3/17	- ''			- Added controls to the Snake Class, fixed controls bugs
-*	''		- ''			- Added Spawning for new central nodes
-*	5/6/17	- ''			- Added Collider and Consumable Class
-*	''		- ''			- Added Settings Classes
-*	5/7/17	- ''			- Added Settings Classes and loading and saving to files
-*	''		- ''			- Moved main game loop into GameLoop Class
-*	''		- ''			- Added Score and GameLoop for Co-op
-*	''		- ''			- Added Score Text
+*	- 04/30/17	- James		- Set up project
+*	- ''		- ''		- Set up design notes
+*	- 05/01/17	- ''		- Added SnakeHead, SnakeTail, SnakeNode, and Snake Classes
+*	- ''		- ''		- Added move to Snake and dependancies
+*	- ''		- ''		- Fixed SnakeHead Movement
+*	- 05/02/17	- ''		- Fixed SnakeNode movement and finished SnakeTail move
+*	- 05/03/17	- ''		- Added controls to the Snake Class, fixed controls bugs
+*	- ''		- ''		- Added Spawning for new central nodes
+*	- 05/06/17	- ''		- Added Collider and Consumable Class
+*	- ''		- ''		- Added Settings Classes
+*	- 05/07/17	- ''		- Added Settings Classes and loading and saving to files
+*	- ''		- ''		- Moved main game loop into GameLoop Class
+*	- ''		- ''		- Added Score and GameLoop for Co-op
+*	- ''		- ''		- Added Score Text
+*	- 05/08/17	- ''		- Added Collision detection for hitting self in solo-play
+*	- ''		- ''		- Added Collision with wall and testing loop
+*	- ''		- ''		- Changed the consumable spawn algorithm
+*	- ''		- ''		- Moved some code in Snake, simplified controls
 *****************************************************************************************
 *****************************************************************************************
 *	ToDo
-*	Fix movement algorithm
-*	Add Warp or crash walls as options
-*	AutoHide inactive mouse
-*	Pick a style to start documentation
+*	-Fix movement algorithm and how it relates to collision algorithm
+*	-Add Warp or crash walls as options
+*	-AutoHide inactive mouse
+*	-Pick a style to start documentation
+*	-Figure out customizable controls save scheme
+*	-Add highscore table
+*	-Finish the alt game loops
 *****************************************************************************************
 *****************************************************************************************
 *	Bug Log
 *	FrameRate Limit causes nodes to seperate slightly
+*	Asynchronous movement causes graphical and collision problems
 *****************************************************************************************
